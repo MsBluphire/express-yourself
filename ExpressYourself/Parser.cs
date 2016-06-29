@@ -26,9 +26,9 @@ namespace ExpressYourself
             else
             {
                 return match.Groups[1].Value;
-            }
+            } 
             else
-{ 
+    { 
             return "";
         }
         }
@@ -36,12 +36,39 @@ namespace ExpressYourself
         public static string GetType(string str)
         {
             // TODO
+            var typeexp = new Regex(@"Type:\s([A-Za-z]+)");
+            var match = typeexp.Match(str)
+               if(!match.Success)
+            {
+                return "Type Not Found";
+            }
+            else
+            {
+                return match.Groups[1].Value;
+            }
             return "";
         }
 
         public static string GetLength(string str)
         {
             // TODO
+            var lengthexp = new Regex(@"Length: ([\w]*[\s][0-9a-z]+)");
+            var match = lengthexp.Match(str);
+            if(!match.Success)
+            {
+                return "Length Not Found";
+            }
+            else
+            {
+                return match.Groups[1].Value;
+                {
+                
+                }
+            
+            else
+ {
+
+            }
             return "";
         }
 
