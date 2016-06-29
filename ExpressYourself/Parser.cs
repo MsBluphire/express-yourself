@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace ExpressYourself
 {
@@ -16,7 +17,20 @@ namespace ExpressYourself
         public static string GetTitle(string str)
         {
             // TODO
+            var titleExpression = new Regex(@"Title\:(.*),+");
+            var match = titleExpression.Match(str);
+            if (!match.Success)
+            {
+                return "Title Not Found";
+            }
+            else
+            {
+                return match.Groups[1].Value;
+            }
+            else
+{ 
             return "";
+        }
         }
 
         public static string GetType(string str)
