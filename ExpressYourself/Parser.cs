@@ -26,19 +26,18 @@ namespace ExpressYourself
             else
             {
                 return match.Groups[1].Value;
-            } 
-            else
-    { 
-            return "";
-        }
+            }
+                       
+                   
+            
         }
 
         public static string GetType(string str)
         {
             // TODO
             var typeexp = new Regex(@"Type:\s([A-Za-z]+)");
-            var match = typeexp.Match(str)
-               if(!match.Success)
+            var match = typeexp.Match(str);
+            if (!match.Success)
             {
                 return "Type Not Found";
             }
@@ -46,7 +45,7 @@ namespace ExpressYourself
             {
                 return match.Groups[1].Value;
             }
-            return "";
+            
         }
 
         public static string GetLength(string str)
@@ -54,24 +53,20 @@ namespace ExpressYourself
             // TODO
             var lengthexp = new Regex(@"Length: ([\w]*[\s][0-9a-z]+)");
             var match = lengthexp.Match(str);
-            if(!match.Success)
+            if (!match.Success)
             {
                 return "Length Not Found";
             }
             else
             {
                 return match.Groups[1].Value;
-                {
-                
-                }
+            }                                 
             
-            else
- {
+             {
+                 }
 
-            }
-            return "";
         }
-
+    
         public static bool IsValidLine(string str)
         {
             // TODO
