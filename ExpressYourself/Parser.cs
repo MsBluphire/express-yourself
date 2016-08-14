@@ -17,7 +17,7 @@ namespace ExpressYourself
         public static string GetTitle(string str)
         {
             // TODO
-            var titleExpression = new Regex(@"Title\:(.*),+");
+            var titleExpression = new Regex(@"Title:\s([A-Za-z]+)");
             var match = titleExpression.Match(str);
             if (!match.Success)
             {
@@ -62,7 +62,7 @@ namespace ExpressYourself
                 return match.Groups[1].Value;
             }                                 
             
-             {
+               {
                  }
 
         }
